@@ -36,6 +36,10 @@ ServicePointManager.SecurityProtocol =
   SecurityProtocolType.Ssl3;
 ```
 
+### `The type initializer for 'Microsoft.Data.Sqlite.SqliteConnection' threw an exception.`
+
+Please [migrate package config to package reference](https://devblogs.microsoft.com/nuget/migrate-packages-config-to-package-reference/) in your project.
+
 ### `Could not load file or assembly 'System.IO.Ports, Version 4.0.1.0, Culture...'`
 
 This issue is caused by invalid composition of `System.IO.Ports` NuGet package, used in .NET Framework environmennt ([source](https://github.com/dotnet/runtime/issues/31136)).
