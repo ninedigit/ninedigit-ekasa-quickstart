@@ -6,8 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="NineDigit.eKasa" Version="5.2.0" />
-    <PackageReference Include="NineDigit.eKasa.Configuration" Version="2.0.1" />
+    <PackageReference Include="NineDigit.eKasa" Version="5.5.0" />
+    <PackageReference Include="NineDigit.eKasa.Configuration" Version="3.0.0" />
     <PackageReference Include="Serilog.Extensions.Logging" Version="3.0.1" />
     <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
   </ItemGroup>

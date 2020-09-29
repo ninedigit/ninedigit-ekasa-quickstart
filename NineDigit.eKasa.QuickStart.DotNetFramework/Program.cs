@@ -15,7 +15,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace NineDigit.eKasa.QuickStart.DotNetFramework
+namespace NineDigit.eKasa.QuickStart
 {
     class Program
     {
@@ -228,7 +228,7 @@ namespace NineDigit.eKasa.QuickStart.DotNetFramework
                 UnitPrice = 1.123456m, // unit price can be specified up to 6 decimal places
                 Quantity = new Quantity(0.123m, "kg"), // quantity can be specified up to 3 decimal places
                 Price = 0.14m, // price must be equal to unitPrice * quantity, and can be specified up to 2 decimal places. Mathematical rounding is applied.
-                VatRate = VatRate.Basic
+                VatRate = VatRate.Free
             };
 
             // this data object has its validator, so we can check, whether our application composes receipt item correctly.
