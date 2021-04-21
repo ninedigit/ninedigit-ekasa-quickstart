@@ -151,7 +151,7 @@ namespace NineDigit.eKasa.QuickStart
 
             // email receipt
             CashRegisterReceipt emailReceipt = this.CreateReceipt();
-            await this.PrintEmailReceipt(pdfReceipt);
+            await this.PrintEmailReceipt(emailReceipt);
 
             // location registration
             await this.LocationRegistration();
@@ -329,6 +329,8 @@ namespace NineDigit.eKasa.QuickStart
                 // required parameter - recipients email address
                 // please change this to some real email address
                 To = "john.brown@example.com",
+                // optional recipient display name
+                RecipientDisplayName = "John Brown",
                 // optional parameter. this will override the "configuration.Printers.Email.Subject" for this specific receipt.
                 Subject = "Your receipt, mr. Brown!",
                 // optional parameter. This will override the "configuration.Printers.Email.Body" for this specific receipt.
