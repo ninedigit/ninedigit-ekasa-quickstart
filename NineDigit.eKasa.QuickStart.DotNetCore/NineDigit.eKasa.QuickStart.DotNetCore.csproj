@@ -6,10 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="NineDigit.eKasa" Version="5.18.0" />
-    <PackageReference Include="NineDigit.eKasa.Configuration" Version="3.1.0" />
-    <PackageReference Include="Serilog.Extensions.Logging" Version="3.0.1" />
-    <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
+    <PackageReference Include="NineDigit.eKasa" Version="5.19.0" />
+    <PackageReference Include="NineDigit.eKasa.Configuration" Version="3.2.0" />
+    <PackageReference Include="Serilog.Extensions.Logging" Version="3.1.0" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="4.0.1" />
   </ItemGroup>
   
 </Project>
