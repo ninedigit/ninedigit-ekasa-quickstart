@@ -213,9 +213,7 @@ namespace NineDigit.eKasa.QuickStart
                 // Optional text, printed between informations about company and items
                 HeaderText = "Web: www.ninedigit.sk",
                 // Optional text, that is printed at the end of the receipt
-                FooterText = "Ďakujeme za nákup.",
-                // Optional customer identification
-                Customer = new Customer(new DIC("2004567890")),
+                FooterText = "Ďakujeme za nákup."
             };
 
             // lets add some items (products) to the receipt - as receipt must have at least one.
