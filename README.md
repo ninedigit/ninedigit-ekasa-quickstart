@@ -40,6 +40,25 @@ ServicePointManager.SecurityProtocol =
 
 Please [migrate package config to package reference](https://devblogs.microsoft.com/nuget/migrate-packages-config-to-package-reference/) in your project.
 
+Verify that output folder of your application countains `runtimes` directory with `e_sqlcipher.dll` assemblies. E.g.
+
+```
+├───runtimes
+│   ├───win-arm
+│   │   └───native
+│   │           e_sqlcipher.dll
+│   │
+│   ├───win-x64
+│   │   └───native
+│   │           e_sqlcipher.dll
+│   │
+│   └───win-x86
+│       └───native
+│               e_sqlcipher.dll
+```
+
+If `runtimes` directory is not created, remove `<RuntimeIdentifier>win</RuntimeIdentifier>` from `.csproj` file of your application.
+
 ### `Could not load file or assembly 'System.IO.Ports, Version 4.0.1.0, Culture...'`
 
 This issue is caused by invalid composition of `System.IO.Ports` NuGet package, used in .NET Framework environmennt ([source](https://github.com/dotnet/runtime/issues/31136)).
