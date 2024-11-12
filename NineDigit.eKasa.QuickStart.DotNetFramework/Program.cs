@@ -1,10 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
-using NineDigit.eKasa.Configuration;
 using NineDigit.eKasa.Configuration.DataSources;
-using NineDigit.eKasa.Core.Data;
-using NineDigit.eKasa.Core.Printing;
-using NineDigit.eKasa.Core.Printing.Models;
-using NineDigit.eKasa.Core.Validation;
+using NineDigit.eKasa.Validation;
 using Serilog;
 using Serilog.Extensions.Logging;
 using System;
@@ -22,8 +18,7 @@ namespace NineDigit.eKasa.QuickStart
         /// <summary>
         /// Application entry point.
         /// </summary>
-        /// <param name="args"></param>
-        static void Main(string[] args)
+        static void Main()
         {
             // Before running this app, please make sure that you have:
             // 1, connected CHDU device to this computer
@@ -226,7 +221,7 @@ namespace NineDigit.eKasa.QuickStart
                 UnitPrice = 1.123456m, // unit price can be specified up to 6 decimal places
                 Quantity = new Quantity(0.123m, "kg"), // quantity can be specified up to 3 decimal places
                 Price = 0.14m, // price must be equal to unitPrice * quantity, and can be specified up to 2 decimal places. Mathematical rounding is applied.
-                VatRate = VatRate.Free
+                VatRate = VatRate.Zero
             };
 
             // this data object has its validator, so we can check, whether our application composes receipt item correctly.
