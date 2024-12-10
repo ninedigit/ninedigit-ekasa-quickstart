@@ -51,7 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="NineDigit.eKasa">
-      <Version>7.0.0</Version>
+      <Version>7.0.3</Version>
     </PackageReference>
     <PackageReference Include="NineDigit.eKasa.Configuration">
       <Version>6.6.1</Version>
