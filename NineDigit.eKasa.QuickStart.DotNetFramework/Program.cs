@@ -258,6 +258,25 @@ namespace NineDigit.eKasa.QuickStart
             ReceiptPayment payment2 = new ReceiptPayment("Hotovosť", -0.86m);
             receipt.Payments.Add(payment2);
 
+            // Optional: after receipt is composed, you mat compose VAT rates tax summary
+            // to verify, whether your VAT calculation matches with eKasa calculation.
+            VatRatesTaxSummary vatRatesTaxSummary = VatRatesTaxSummary.Create(receipt.Items);
+            foreach (VatRateTaxSummary vatRateTaxSummary in vatRatesTaxSummary)
+            {
+                // you may verify your calculations for given VAT rate using variables stated below:
+                VatRate vatRate = vatRateTaxSummary.VatRate;
+                Amount vatBase = vatRateTaxSummary.VatBase; // the turnover excluding VAT
+                Amount vatAmount = vatRateTaxSummary.VatAmount; // the VAT amount
+                Amount totalAmountByVatRate = vatRateTaxSummary.TotalAmount; // is equal to vatBase + vatAmount 
+            }
+
+            // you may verify your total calculations with variables stated below:
+            Amount totalNonTaxableAmount = vatRatesTaxSummary.TotalNonTaxableAmount;
+            Amount totalTaxableAmount = vatRatesTaxSummary.TotalTaxableAmount;
+            Amount totalAmount = vatRatesTaxSummary.TotalAmount; // is equal to totalNonTaxableAmount + totalTaxableAmount
+            Amount totalVatAmout = vatRatesTaxSummary.TotalVatAmout;
+            Amount totalVatBase = vatRatesTaxSummary.TotalVatBase;
+
             return receipt;
         }
 
