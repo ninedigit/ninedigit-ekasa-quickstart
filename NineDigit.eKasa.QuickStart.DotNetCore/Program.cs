@@ -192,7 +192,13 @@ public class QuickStartApp : IDisposable
 
         ReceiptText receiptText = new ReceiptText(text);
 
-        TextPrintContext context = new TextPrintContext(receiptText);
+        bool textContainsPriceInformation = false;
+        
+        NonfiscalReceiptContentFlags contentFlags = textContainsPriceInformation
+            ? NonfiscalReceiptContentFlags.PriceInformation
+            : NonfiscalReceiptContentFlags.None;
+
+        TextPrintContext context = new TextPrintContext(receiptText, contentFlags);
 
         return this.client.PrintTextAsync(context, CancellationToken.None);
     }
@@ -335,11 +341,10 @@ public class QuickStartApp : IDisposable
     private async Task PrintEmailReceipt(CashRegisterReceipt receipt)
     {
         // create printing options object from dictionary.
-        EmailPrintingOptions printOptions = new EmailPrintingOptions()
+        EmailPrintingOptions printOptions = new EmailPrintingOptions(
+            // please change recipient email address to some real email address
+            to: "john.brown@example.com")
         {
-            // required parameter - recipients email address
-            // please change this to some real email address
-            To = "john.brown@example.com",
             // optional recipient display name
             RecipientDisplayName = "John Brown",
             // optional parameter. this will override the "configuration.Printers.Email.Subject" for this specific receipt.
