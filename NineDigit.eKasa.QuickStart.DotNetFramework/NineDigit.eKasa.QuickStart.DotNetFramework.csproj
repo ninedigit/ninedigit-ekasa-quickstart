@@ -52,7 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="NineDigit.eKasa">
-      <Version>8.0.1-beta.2</Version>
+      <Version>8.0.2</Version>
     </PackageReference>
     <PackageReference Include="Serilog.Extensions.Logging">
       <Version>8.0.0</Version>
